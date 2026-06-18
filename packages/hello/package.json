@@ -1,6 +1,6 @@
 {
   "name": "@offload-project/hello",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Practice package A.",
   "main": "index.js",
   "license": "MIT"
