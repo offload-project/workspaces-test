@@ -1,0 +1,7 @@
+{
+  "name": "@offload-project/world",
+  "version": "0.0.0",
+  "description": "Practice package B.",
+  "main": "index.js",
+  "license": "MIT"
+}

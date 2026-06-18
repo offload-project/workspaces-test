@@ -1,0 +1,33 @@
+name: Release
+
+on:
+  pull_request:
+    types: [ closed ]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+
+      # NOTE: points at the feature branch so you can test before it's released.
+      # Switch to a tag (e.g. @v2) once the monorepo support ships.
+      - uses: offload-project/release-champion@feat/monorepo-publishing
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          publish-npm: true
+          npm-workspaces: true
+          npm-token: ${{ secrets.NPM_TOKEN }}
