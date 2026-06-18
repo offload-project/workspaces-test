@@ -21,7 +21,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
+          registry-url: 'https://npm.pkg.github.com'
 
       # NOTE: points at the feature branch so you can test before it's released.
       # Switch to a tag (e.g. @v2) once the monorepo support ships.
@@ -30,4 +30,4 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           publish-npm: true
           npm-workspaces: true
-          npm-token: ${{ secrets.NPM_TOKEN }}
+          npm-token: ${{ secrets.PACKAGE_WRITE_TOKEN }}
