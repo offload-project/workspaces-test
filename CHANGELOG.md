@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.1.1 - 2026-06-18
+
+### Changed
+- Add packages write permission [#3](https://github.com/offload-project/workspaces-test/pull/3)
+
 ## v0.1.0 - 2026-06-18
 
 ### Changed
