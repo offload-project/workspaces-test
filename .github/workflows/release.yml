@@ -31,3 +31,4 @@ jobs:
           publish-npm: true
           npm-workspaces: true
           npm-token: ${{ secrets.PACKAGE_WRITE_TOKEN }}
+          npm-registry: 'https://npm.pkg.github.com'
